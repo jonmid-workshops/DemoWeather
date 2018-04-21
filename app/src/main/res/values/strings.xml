@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DemoWeather</string>
+    <string name="str_label_1">Current</string>
+    <string name="str_label_2">Min</string>
+    <string name="str_label_3">Max</string>
+    <string name="str_btn_search">Buscar</string>
+</resources>
