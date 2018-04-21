@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.ExecutorService;
@@ -69,6 +72,26 @@ public class MainActivity extends AppCompatActivity {
                 if (url != null){
                     remoteData = CAFData.dataWithContentsOfURL(url);
                     Log.d("DemoWeather", remoteData.toText());
+
+                    try {
+                        JSONObject root = new JSONObject(remoteData.toText());
+                        JSONObject main = root.getJSONObject("main");
+                        final float temp = (float) main.getDouble("temp");
+                        final float tempMin = (float) main.getDouble("temp_min");
+                        final float tempMax = (float) main.getDouble("temp_max");
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                textViewCurrent.setText(String.valueOf(temp));
+                                textViewMin.setText(String.valueOf(tempMin));
+                                textViewMax.setText(String.valueOf(tempMax));
+                            }
+                        });
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                 }
 
             }
