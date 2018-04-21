@@ -3,6 +3,7 @@ package com.example.estudiantes.demoweather;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private final static String FORMAT = "https://api.openweathermap.org/data/2.5/weather?q=Cali,co&appid=6498e268f2de120d0cd71288c41cbcc6";
 
-    private EditText editTextSearch;
+    private TextInputEditText editTextSearch;
     private Button buttonSearch;
     private TextView textViewCurrent;
     private TextView textViewMin;

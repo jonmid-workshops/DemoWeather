@@ -6,115 +6,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
+    android:background="@color/colorPrimary"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="24dp">
 
-        <EditText
-            android:id="@+id/editTextSearch"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Name" />
+            android:theme="@style/EditTextWhite">
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/editTextSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Digitar ciudad"/>
+        </android.support.design.widget.TextInputLayout>
+
         <Button
             android:id="@+id/btnSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/str_btn_search"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginTop="16dp"
+            android:text="Obtener clima"
+            android:theme="@style/RaisedButtonDark" />
 
-        <LinearLayout
+        <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
+            android:layout_height="300dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="16dp">
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/str_label_1"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-            <TextView
-                android:id="@+id/txvCurrent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Panel 2"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-        </LinearLayout>
+                android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/str_label_2"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-            <TextView
-                android:id="@+id/txvMin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Panel 2"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bacground_card"
+                    android:scaleType="centerCrop"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/str_label_3"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-            <TextView
-                android:id="@+id/txvMax"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Panel 2"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-        </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#E62D2E53"
+                    android:layout_alignParentBottom="true"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Weather"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-            <TextView
-                android:id="@+id/txvWeather"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Panel 2"
-                android:layout_weight="1"
-                android:textAlignment="center"/>
-        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura actual"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                        <TextView
+                            android:id="@+id/txvCurrent"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                    </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imgWeather"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura minima"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                        <TextView
+                            android:id="@+id/txvMin"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                    </LinearLayout>
 
-        <Button
-            android:id="@+id/btnGo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Ir"
-            android:layout_marginBottom="16dp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Temperatura maxima"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                        <TextView
+                            android:id="@+id/txvMax"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                    </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Clima"
+                            android:layout_weight="1"
+                            android:textAlignment="textStart"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                        <TextView
+                            android:id="@+id/txvWeather"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAlignment="center"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+                    </LinearLayout>
 
+                    <Button
+                        android:id="@+id/btnGo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mostrar mi ubicación"
+                        android:theme="@style/RaisedButtonDark"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imgWeather"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="24dp"/>
+
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
